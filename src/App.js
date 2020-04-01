@@ -1,25 +1,30 @@
 import React from 'react';
-import logo from './logo.svg';
+import { BrowserRouter as Router, Switch, Route, } from 'react-router-dom';
+
 import './App.css';
+
+import Header from './components/header/header.component';
+import Footer from './components/footer/footer.component';
+
+import HomePage from './pages/homepage/homepage.component';
+import Pencil from './pages/pencil/pencil.component';
+import Watercolor from './pages/watercolor/watercolor.component';
+import Acrylic from './pages/acrylic/acrylic.component';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div>
+        <Header/>
+        <Switch>
+          <Route exact path='/' component={HomePage}/>
+          <Route exact path='/pencil' component={Pencil}/>
+          <Route exact path='/Acrylic' component={Acrylic}/>
+          <Route exact path='/Watercolor' component={Watercolor}/>          
+        </Switch>
+        <Footer/>
+      </div>
+    </Router>
   );
 }
 
