@@ -1,0 +1,72 @@
+.header {
+  height: 50vh;
+  background-color: blue;
+  font-size: 16px;
+  font-family: "Noto Serif", serif;
+  font-weight: 600;
+
+  display: flex;
+  justify-content: center;
+
+  .option {
+    padding: 25px 15px;
+    color: white;
+    font-weight: bold;
+
+    a:hover {
+      color: pink;
+    }
+    a.active {
+      color: pink;
+    }
+
+    @media screen and(max-width: 800px) {
+      display: none;
+      color: black;
+      text-align: center;
+      padding: 8px;
+      font-size: 24px;
+      &.show {
+        display: block;
+      }
+      z-index: 10;
+    }
+  }
+
+  #icons {
+    @media screen and(max-width: 800px) {
+      display: flex;
+      a {
+        width: 30px;
+        height: 30px;
+        margin: 30px 10px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    background: none;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    z-index: 5;
+    top: -50vh;
+    transition: all 500ms ease;
+
+    &.show {
+      height: 50vh;
+      background-color: white;
+      top: 0;
+      transition: top 300ms cubic-bezier(0.17, 0.04, 0.03, 0.94);
+    }
+  }
+}
+
+.background {
+  @media screen and (max-width: 800px) {
+    background-color: blue;
+    color: blue;
+    height: 50vh;
+  }
+}
